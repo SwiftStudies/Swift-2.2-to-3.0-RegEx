@@ -5,7 +5,7 @@ These have been listed in order you should apply (for example, the more complex 
 
 If you have any improvements or additions, please fork and create a pull request. I would love to receive other contributions. 
 
-## Replacing 'standard' C-style for loops
+## Replacing standard 'less-than' C-style for loops
 Regular Expression: `for[ \t]+var[ \t]+(i)[ \t]*=[ \t]*([\d]+|[:alnum:]+)[ \t]*;[ \t]*\1[ \t]*<[ \t]*([\d]+|[:alnum:]+)[ \t]*;[ \t]*\1\+\+`
 
 Replace with `for var $1 in $2..<$3`
@@ -19,7 +19,22 @@ Would become
 ```
   for i in 0..<10{
 ```
-  
+
+## Replacing standard 'less-than-or-equal-to' C-style for loops
+Regular Expression: `for[ \t]+var[ \t]+(i)[ \t]*=[ \t]*([\d]+|[:alnum:]+)[ \t]*;[ \t]*\1[ \t]*<=[ \t]*([\d]+|[:alnum:]+)[ \t]*;[ \t]*\1\+\+`
+
+Replace with `for var $1 in $2...$3`
+
+For example
+```
+  for var i=0;i<=10;i++{
+```
+
+Would become
+```
+  for i in 0...10{
+```
+
 ## Replacing ++/--\<var> in parameters
 Regular Expression: `(^[ \t]*[:alnum:]+)(\(|,)[ \t]*([\+-]){2}([:alnum:]+)`
 
