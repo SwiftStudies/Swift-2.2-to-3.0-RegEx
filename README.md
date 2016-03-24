@@ -10,7 +10,7 @@ Regular Expression: `for[ \t]+var[ \t]+(i)[ \t]*=[ \t]*([\d]+|[:alnum:]+)[ \t]*;
 
 Replace with `for var $1 in $2..<$3`
 
-## Replacing ++/-- in inline code
-Regular Expression: `([:alnum:])([\+-]){2}`
+## Replacing \<var>++/-- in inline code
+Regular Expression: `([:alnum:]+)([\+-]){2}`
 
-Replace with `$1 $2= 1`
+Replace with `$1$2=1`
