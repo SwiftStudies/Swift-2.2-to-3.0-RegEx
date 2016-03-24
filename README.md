@@ -11,23 +11,30 @@ Regular Expression: `for[ \t]+var[ \t]+(i)[ \t]*=[ \t]*([\d]+|[:alnum:]+)[ \t]*;
 Replace with `for var $1 in $2..<$3`
 
 For example
+```
   for var i=0;i<10;i++{
-  
-Would become
-  for i in 0..<10{
-  
+```
 
+Would become
+```
+  for i in 0..<10{
+```
+  
 ## Replacing ++/--\<var> in parameters
 Regular Expression: `(^[ \t]*[:alnum:]+)(\(|,)[ \t]*([\+-]){2}([:alnum:]+)`
 
 Replace with `$4$3=1\n$1$2$4`
 
 For example
+```
   someFunction(++i,other)
-  
+```
+
 Would become
+```
   i+=1
   someFunction(i,other)
+```
 
 ## Replacing \<var>++/-- in inline code
 Regular Expression: `([:alnum:]+)([\+-]){2}`
@@ -35,11 +42,14 @@ Regular Expression: `([:alnum:]+)([\+-]){2}`
 Replace with `$1$2=1`
 
 For example
+```
   i++
-  
-Would become
-  i+=1
+```
 
+Would become
+```
+  i+=1
+```
 
 ## Replace ++/--\<var> in free space
 Regular Expression: `^[ \t]*([\+-]){2}([:alnum:]+)`
@@ -47,7 +57,10 @@ Regular Expression: `^[ \t]*([\+-]){2}([:alnum:]+)`
 Replace with `$2$1=1`
 
 For example
+```
   ++i
-  
+```  
 Would become
+```
   i+=1
+```
