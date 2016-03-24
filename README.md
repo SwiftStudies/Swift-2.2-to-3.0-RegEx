@@ -3,7 +3,7 @@ A simple set of regular expressions that make migrating from 2.2 to 3.0 easy by 
 
 These have been listed in order you should apply (for example, the more complex c-style for loop replacements first, before you get to simpler uses of ++ and --. 
 
-If you have any improvements or additions, please fork and create a pull request. I would love to receive other contributions. 
+**If you have any fixes, improvements or additions, please fork and create a pull request. I would love to receive other contributions. If you are not a RegEx guru, then please raise issues using the GitHub system.**
 
 ## Replacing standard 'less-than' C-style for loops
 Regular Expression: `for[ \t]+var[ \t]+(i)[ \t]*=[ \t]*([\d]+|[:alnum:]+)[ \t]*;[ \t]*\1[ \t]*<[ \t]*([\d]+|[:alnum:]+)[ \t]*;[ \t]*\1\+\+`
