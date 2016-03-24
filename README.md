@@ -14,3 +14,8 @@ Replace with `for var $1 in $2..<$3`
 Regular Expression: `([:alnum:]+)([\+-]){2}`
 
 Replace with `$1$2=1`
+
+## Replace ++/--\<var> in free space
+Regular Expression: `^[ \t]*([\+-]){2}([:alnum:]+)`
+
+Replace with `$2$1=1`
